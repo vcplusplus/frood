@@ -8,7 +8,7 @@
 
 import Foundation
 import Gloss
-
+import Alamofire
 
 
 class FroodAPI {
@@ -19,56 +19,31 @@ class FroodAPI {
         self.serverURL = serverURL
     }
     
-    func getAllEvents() -> [Event]? {
-        var events:[Event]?
+    func getAllEvents(callback: (events:[Event]?, error:String?) -> Void ) {
+//        var events:[Event]?
         
-        let requestURL: NSURL = NSURL(string: serverURL + "/api/events")!
-        let urlRequest: NSMutableURLRequest = NSMutableURLRequest(URL: requestURL)
-        let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(urlRequest, completionHandler: {
-            (data, response, error) -> Void in
-            
-//            let httpResponse = response as! NSHTTPURLResponse
-            guard let responseData = data else {
-                return
-            }
-            guard error == nil else {
-                return
-            }
-            
-//            let statusCode = httpResponse.statusCode
-            
-//            if (statusCode == 200) {
-            
-                do{
+        Alamofire.request(.GET, serverURL + "/api/events")
+            .responseJSON { response in
+                switch response.result {
+                case .Success(let json):
+                    print("Success with JSON: \(json)")
                     
-                    let json = try NSJSONSerialization.JSONObjectWithData(responseData, options:.AllowFragments)
+                    let response = json as! [NSDictionary]
                     
-                    events = Event.modelsFromJSONArray(json as! [JSON])
+                    //example if there is an id
+                    let events = Event.modelsFromJSONArray(response as! [JSON])
+                    callback(events: events,error:nil)
                     
-                }catch {
-                    print("Error with Json: \(error)")
-                    
+                case .Failure(let error):
+                    print("Request failed with error: \(error)")
+                    callback(events:nil,error:"error")
                 }
-                
-//            }
-            
-        })
-        
-        task.resume()
-        sleep(4)
-        return events
+        }
+       
+//        return events
     }
     
-//    func addEvent(event:Event) {
-//        let request = NSMutableURLRequest(URL: NSURL(string: serverURL)!)
-//        request.HTTPMethod = "POST"
-//        request.addValue("application/json",
-//        forHTTPHeaderField: "Content-Type")
-////        let jsonString = JSONStringify(jsonObj)
-//        let data: NSData = jsonString.dataUsingEncoding(
-//            NSUTF8StringEncoding)!
-//        request.HTTPBody = data
-//        HTTPsendRequest(request,callback: callback)
-//    }
+    func addEvent(event:Event) {
+        Alamofire.request(.POST, serverURL + "/api/events/",parameters: event.toJSON())
+    }
 }

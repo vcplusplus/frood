@@ -72,6 +72,22 @@ struct Event:Decodable {
         
     }
     
+    func toJSON() -> JSON? {
+        return jsonify(
+            [
+            "id" ~~> self.id,
+            "name" ~~> self.name,
+            "description" ~~> self.description,
+            "location" ~~> self.location,
+            "host" ~~> self.host,
+            "start" ~~> self.start,
+            "end" ~~> self.end,
+            "reports" ~~> self.reports,
+            "hearts" ~~> self.hearts,
+            "tags" ~~> self.tags,
+        ])
+    }
+    
     /// somekind of requests
    // @NSManaged var longitude: Double
    // @NSManaged var latitude: Double

@@ -23,7 +23,18 @@ class MasterViewController: UITableViewController {
         super.viewDidLoad()
         model = ViewModel()
         api = FroodAPI(serverURL: "http://frood.georgewitteman.com")
-        events = api!.getAllEvents()!
+        api!.getAllEvents({(events:[Event]?, error:String?) -> Void in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            
+            
+            self.events = events!
+            print(events)
+        })
+//        usleep(50000)
+        api!.addEvent(Event(json: testJSON)!)
         // Do any additional setup after loading the view, typically from a nib.
        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
