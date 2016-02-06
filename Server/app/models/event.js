@@ -1,5 +1,5 @@
-var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
+var mongoose = require('mongoose')
+var Schema = mongoose.Schema
 
 var EventSchema = new Schema({
 	name: String,
@@ -17,6 +17,6 @@ var EventSchema = new Schema({
 		type: Number,
 		default: 0
 	}
-});
+})
 
-module.exports = mongoose.model('Event', EventSchema);
+module.exports = mongoose.model('Event', EventSchema)
