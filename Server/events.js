@@ -25,11 +25,14 @@ router.route('/')
       event.end = new Date(req.body.end);
       event.tags = req.body.tags;
 
-      event.save(function(err) {
+      event.save(function(err, event) {
         if (err)
           res.send(err);
 
-        res.json({ message: "Successfully added event" });
+        res.json({
+          id: event.id,
+          message: "Created!"
+         });
       });
     } else {
       res.json({ message: "Error! You did not include all the required info." });
@@ -87,7 +90,7 @@ router.route('/:event_id')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json(event);
+        res.json({ message: "Updated!" });
       });
     });
   })
@@ -100,7 +103,7 @@ router.route('/:event_id')
       if (err)
         res.send(err);
 
-      res.json({ message: 'Successfully deleted' });
+      res.json({ message: 'Deleted!' });
     });
   });
 
@@ -115,7 +118,7 @@ router.route('/:event_id/report')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json(event);
+        res.json({ message: "Reported!" });
       });
     });
   });
@@ -131,7 +134,7 @@ router.route('/:event_id/heart')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json(event);
+        res.json({message: "Hearted!"});
       });
     });
   })
@@ -147,7 +150,7 @@ router.route('/:event_id/heart')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json(event);
+        res.json({message: "Unhearted!"});
       });
     });
   });
