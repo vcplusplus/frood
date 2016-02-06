@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
             endTime.text = event.end
         }
         if let foodImage = imageView {
-            foodImage.image = event.image
+            foodImage.image = UIImage(named: "foodImagePlaceholder")
         }
         if let description = descriptionTextView {
             description.text = event.description
