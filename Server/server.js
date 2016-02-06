@@ -41,10 +41,14 @@ var api = require("./api");
 // Create /api/event router
 var events = require('./events');
 
+// Create /api/upload
+var upload = require('./upload');
+
 // REGISTER OUR ROUTES -------------------------------
 app.use('/', router);
 app.use('/api', api);
 app.use('/api/events', events);
+app.use('/api/upload', upload);
 
 // START THE SERVER
 // =============================================================================
