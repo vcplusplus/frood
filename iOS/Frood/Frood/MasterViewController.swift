@@ -11,7 +11,7 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var events = [AnyObject]()
+    var events = [Event]()
     // also very bad and hacky
     static var passedEvent:Event!
     static var isThereAPassedEvent:Bool!
@@ -20,24 +20,31 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        // load up everything we have so far
+        // requires API call !!!!
+        reloadInputViews()
     }
 
 
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
-        if (MasterViewController.isThereAPassedEvent != nil) {
-            events.append(MasterViewController.passedEvent)
+        if let bo = MasterViewController.isThereAPassedEvent {
+            if (bo) {
+                events.append(MasterViewController.passedEvent)
+                //events.insert(MasterViewController.passedEvent, atIndex: 0)
+               // let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+               // self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+                 MasterViewController.isThereAPassedEvent = false
+            }
+            
         }
-        // load up everything we have so far
-        // requires API call !!!!
-        //if (MasterViewController.isThereAPassedEvent != nil) {
+        
+        //if (MasterViewController.isThereAPassedEvent) {
         //    events.insert(MasterViewController.passedEvent, atIndex: 0)
         //    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         //    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -49,15 +56,6 @@ class MasterViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    func insertNewObject(sender: AnyObject) {
-        // eventually pull up a view that's like hey set up this event !!
-          performSegueWithIdentifier("addNewItem", sender:self)
-        //events.insert(e, atIndex: 0)
-        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-    }
-    
     
     // MARK: - Segues
 

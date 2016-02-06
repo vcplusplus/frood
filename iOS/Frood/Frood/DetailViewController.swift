@@ -17,8 +17,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var locationTextView: UITextView!
-    @IBOutlet weak var heartImageView: UIImageView!
-    @IBOutlet weak var reportImageView: UIImageView!
     
     @IBOutlet weak var heartButton: UIButton!
     @IBOutlet weak var reportButton: UIButton!
@@ -66,19 +64,19 @@ class DetailViewController: UIViewController {
         if let location = locationTextView {
             location.text = "Location: \(event.location)"
         }
-        if let heart = heartImageView {
+        if let heart = heartButton {
             happyHeart = false;
-            heart.image = UIImage(named: "unfilledHeart")
+            heart.setImage(UIImage(named:"unfilledHeart"), forState: UIControlState.Normal)
             
         }
-        if let report = reportImageView {
+        if let report = reportButton {
             negativeReport = false;
-            report.image = UIImage(named: "unfilledExclamationPoint")
+            report.setImage(UIImage(named:"unfilledExclamationPoint"), forState: UIControlState.Normal)
         }
     }
     
-    func heartButtonPressed() {
-        if (happyHeart != nil) {
+    @IBAction func heartButtonPressed(sender: AnyObject) {
+        if (happyHeart!) {
             heartButton.setImage(UIImage(named:"unfilledHeart"), forState: UIControlState.Normal)
             happyHeart = false
         } else {
@@ -87,8 +85,8 @@ class DetailViewController: UIViewController {
         }
     }
     
-    func reportButtonPressed() {
-        if (negativeReport != nil) {
+    @IBAction func reportButtonPressed(sender: AnyObject) {
+        if (negativeReport!) {
             reportButton.setImage(UIImage(named:"unfilledExclamationPoint"), forState: UIControlState.Normal)
             negativeReport = false
         } else {
