@@ -48,10 +48,10 @@ class DetailViewController: UIViewController {
                 location.text = event.location
             }
             if let heart = heartImageView {
-                heart.image = UIImage(named: "heartImagePlaceholder")
+                heart.image = UIImage(named: "filledHeart")
             }
             if let report = reportImageView {
-                report.image = UIImage(named: "reportImagePlaceholder")
+                report.image = UIImage(named: "filledExclamationPoint")
             }
 
         }
