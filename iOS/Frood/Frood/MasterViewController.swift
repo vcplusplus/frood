@@ -12,13 +12,14 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var events = [AnyObject]()
+    var passedEvent:Event!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        //self.navigationItem.rightBarButtonItem = addButton
+       let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -37,7 +38,7 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(sender: AnyObject) {
         // eventually pull up a view that's like hey set up this event !!
-         // performSegueWithIdentifier("addNewItem", sender:self)
+          performSegueWithIdentifier("addNewItem", sender:self)
        // events.insert(Event(), atIndex: 0)
        // let indexPath = NSIndexPath(forRow: 0, inSection: 0)
       //  self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)

@@ -17,6 +17,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
     @IBOutlet weak var endTimeDatePicker: UIDatePicker!
     @IBOutlet weak var descriptionTextView: UITextView!
     
+    @IBOutlet weak var submitEventButton: UIButton!
     var event:Event!
     
     override func viewDidLoad() {
@@ -51,14 +52,28 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
         // save the event to the database
         
         // go back to other view
-        
+        performSegueWithIdentifier("backToMaster", sender: self)
     }
     
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-      //  if (sender != self.doneButton) {
-      //      return
-      //  }
+        if (segue.identifier == "backToMaster") {
+            self.event = Event()
+            // set stuff up about the event
+            self.event.title = nameOfEventTextField.text!
+            self.event.location = locationTextField.text!
+            self.event.start = startTimeDatePicker.description
+            self.event.end = endTimeDatePicker.description
+            self.event.description = descriptionTextView.description
+            
+            
+            
+         //   let svc = segue.destinationViewController as! DetailViewController
+         //  svc.detailItem = event
+
+            //MasterViewController.unwindForSegue(segue, towardsViewController: MasterViewController())
+           // var svc = segue.destinationViewController as! MasterViewController;
+       }
     }
 }

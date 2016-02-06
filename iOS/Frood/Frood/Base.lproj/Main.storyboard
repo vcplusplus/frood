@@ -277,6 +277,7 @@
                                 </state>
                                 <connections>
                                     <action selector="submitEventButtonPressed:" destination="0hW-r9-tpm" eventType="touchUpInside" id="N2s-ee-38X"/>
+                                    <segue destination="H1p-Uh-vWS" kind="show" identifier="backToMaster" id="J4N-uU-yQN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-xG-Y0G">
@@ -308,6 +309,7 @@
                         <outlet property="locationTextField" destination="5dx-Z1-mcr" id="kUa-Iy-Ye0"/>
                         <outlet property="nameOfEventTextField" destination="bnF-nK-GQp" id="ySs-L6-6mk"/>
                         <outlet property="startTimeDatePicker" destination="euo-ZV-bOm" id="UqJ-5h-sdw"/>
+                        <outlet property="submitEventButton" destination="C9r-bh-Fbe" id="iVr-eA-txH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYS-Ry-vph" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -331,6 +333,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="6S0-TO-JiA"/>
+        <segue reference="Tll-UG-LXB"/>
     </inferredMetricsTieBreakers>
 </document>
