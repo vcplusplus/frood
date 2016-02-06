@@ -21,7 +21,7 @@ var port = process.env.PORT || 80 // set our port
 var router = new express.Router()
 
 router.get("/", function(req, res) {
-	res.json({ message: 'The API is at /api' })
+	res.json({ message: 'The API is at /api.' })
 })
 
 // /static serves the /uploads folder
