@@ -45,6 +45,7 @@ router.route('/')
          })
       })
     } else {
+      console.log(req)
       console.log("Not enough info!!!")
       res.json({ message: "Error! You did not include all the required info." })
     }
