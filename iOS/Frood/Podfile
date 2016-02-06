@@ -1,0 +1,6 @@
+use_frameworks!
+platform :ios, '8.0'
+
+target 'Frood' do
+    pod 'Gloss', '~> 0.6'
+end

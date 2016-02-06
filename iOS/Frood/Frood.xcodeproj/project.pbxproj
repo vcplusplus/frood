@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< Updated upstream
+		11EB33FFBAF194BDAAE8D5BE /* Pods_Frood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */; };
+=======
+		74C117FE1C66542F00B7851A /* filledHeartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C117FD1C66542F00B7851A /* filledHeartIcon.png */; };
+		74C118001C66543B00B7851A /* unfilledHeartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */; };
+>>>>>>> Stashed changes
 		EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CC1C65950200018BE6 /* AppDelegate.swift */; };
 		EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CE1C65950200018BE6 /* MasterViewController.swift */; };
 		EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7D01C65950200018BE6 /* DetailViewController.swift */; };
@@ -37,6 +43,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< Updated upstream
+		7130AED2C4E7ABB12AF2F2CA /* Pods-Frood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.debug.xcconfig"; sourceTree = "<group>"; };
+		A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBBE8D13A675829B72CFFCA /* Pods-Frood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.release.xcconfig"; sourceTree = "<group>"; };
+=======
+		74C117FD1C66542F00B7851A /* filledHeartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filledHeartIcon.png; path = ../../../../../Desktop/filledHeartIcon.png; sourceTree = "<group>"; };
+		74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unfilledHeartIcon.png; path = ../../../../../Desktop/unfilledHeartIcon.png; sourceTree = "<group>"; };
+>>>>>>> Stashed changes
 		EB42F7C91C65950200018BE6 /* Frood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB42F7CC1C65950200018BE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB42F7CE1C65950200018BE6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EB33FFBAF194BDAAE8D5BE /* Pods_Frood.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +95,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A892A2E803D30D06A0FF528 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7130AED2C4E7ABB12AF2F2CA /* Pods-Frood.debug.xcconfig */,
+				AFBBE8D13A675829B72CFFCA /* Pods-Frood.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9DEFCCFF932A3B2A5145B3E8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB42F7C01C65950200018BE6 = {
 			isa = PBXGroup;
 			children = (
@@ -87,6 +119,8 @@
 				EB42F7E21C65950300018BE6 /* FroodTests */,
 				EB42F7ED1C65950300018BE6 /* FroodUITests */,
 				EB42F7CA1C65950200018BE6 /* Products */,
+				4A892A2E803D30D06A0FF528 /* Pods */,
+				9DEFCCFF932A3B2A5145B3E8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +143,8 @@
 				EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */,
 				EB42F7D21C65950200018BE6 /* Main.storyboard */,
 				EB42F7D51C65950300018BE6 /* Assets.xcassets */,
+				74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */,
+				74C117FD1C66542F00B7851A /* filledHeartIcon.png */,
 				EB42F7D71C65950300018BE6 /* LaunchScreen.storyboard */,
 				EB42F7DA1C65950300018BE6 /* Info.plist */,
 				EB42F7FE1C6642D900018BE6 /* Event.swift */,
@@ -141,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EB42F7F31C65950300018BE6 /* Build configuration list for PBXNativeTarget "Frood" */;
 			buildPhases = (
+				5328BFEAFF1D8E6D3266CCA3 /* Check Pods Manifest.lock */,
 				EB42F7C51C65950200018BE6 /* Sources */,
 				EB42F7C61C65950200018BE6 /* Frameworks */,
 				EB42F7C71C65950200018BE6 /* Resources */,
+				DF3B66D28C528C2F825FB1EF /* Embed Pods Frameworks */,
+				D3DEB8F46CA8A6E9BDFD17E2 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,8 +281,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB42F7D91C65950300018BE6 /* LaunchScreen.storyboard in Resources */,
+				74C118001C66543B00B7851A /* unfilledHeartIcon.png in Resources */,
 				EB42F7D61C65950300018BE6 /* Assets.xcassets in Resources */,
 				EB42F7D41C65950200018BE6 /* Main.storyboard in Resources */,
+				74C117FE1C66542F00B7851A /* filledHeartIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +303,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5328BFEAFF1D8E6D3266CCA3 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D3DEB8F46CA8A6E9BDFD17E2 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frood/Pods-Frood-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF3B66D28C528C2F825FB1EF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Frood/Pods-Frood-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EB42F7C51C65950200018BE6 /* Sources */ = {
@@ -410,6 +499,7 @@
 		};
 		EB42F7F41C65950300018BE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7130AED2C4E7ABB12AF2F2CA /* Pods-Frood.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Frood/Info.plist;
@@ -421,6 +511,7 @@
 		};
 		EB42F7F51C65950300018BE6 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AFBBE8D13A675829B72CFFCA /* Pods-Frood.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Frood/Info.plist;

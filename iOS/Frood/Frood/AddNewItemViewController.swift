@@ -17,16 +17,26 @@ class AddNewItemViewController : UIViewController {
     @IBOutlet weak var endTimeDatePicker: UIDatePicker!
     @IBOutlet weak var descriptionTextView: UITextView!
     
-    var event:Event
+    var event:Event!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
     
     @IBAction func uploadImageButtonPressed(sender: AnyObject) {
-        
+        // Go to where we can upload images
     }
     
     
     @IBAction func submitEventButtonPressed(sender: AnyObject) {
-        
+        self.event = Event()
+        // set stuff up about the event
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+      //  if (sender != self.doneButton) {
+      //      return
+      //  }
+    }
 }

@@ -17,8 +17,8 @@ class MasterViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        self.navigationItem.rightBarButtonItem = addButton
+       // let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        //self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
@@ -38,32 +38,23 @@ class MasterViewController: UITableViewController {
     func insertNewObject(sender: AnyObject) {
         // eventually pull up a view that's like hey set up this event !!
         // performSegueWithIdentifier("addNewItem", sender:self)
-        events.insert(Event(), atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        //events.insert(Event(), atIndex: 0)
+        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
 
     }
     
     
     override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        var source = unwindSegue.sourceViewController as! AddNewItemViewController
-        var event:Event = source.event
+        let source = unwindSegue.sourceViewController as! AddNewItemViewController
+        let event:Event = source.event
         // get vars from the sourceViewController and set them equal to stuff
-        
-        events.insert(Event(), atIndex: 0)
+        events.insert(event, atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+        self.tableView.reloadData()
     }
     
-//    - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-//    XYZAddToDoItemViewController *source = [segue sourceViewController];
-//    XYZToDoItem *item = source.toDoItem;
-//    if (item != nil) {
-//    [self.toDoItems addObject:item];
-//    }
-//    [self.tableView reloadData];
-//    }
-
     // MARK: - Segues
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
