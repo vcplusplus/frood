@@ -20,13 +20,6 @@ var port = process.env.PORT || 8080 // set our port
 // =============================================================================
 var router = new express.Router()
 
-// middleware to use for all requests
-router.use(function(req, res, next) {
-	// do logging
-	//console.log('Something is happening.');
-	next()
-})
-
 router.get("/", function(req, res) {
 	res.json({ message: 'The API is at /api' })
 })
