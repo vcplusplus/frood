@@ -19,4 +19,14 @@ var EventSchema = new Schema({
 	}
 })
 
+// Duplicate the ID field.
+EventSchema.virtual('id').get(function(){
+    return this._id.toHexString();
+});
+
+// Ensure virtual fields are serialised.
+EventSchema.set('toJSON', {
+    virtuals: true
+});
+
 module.exports = mongoose.model('Event', EventSchema)
