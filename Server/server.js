@@ -24,20 +24,17 @@ router.get("/", function(req, res) {
 	res.json({ message: 'The API is at /api' })
 })
 
+// /static serves the /uploads folder
 app.use('/static', express.static('uploads'))
 
 // Connect to the database
-var mongoose   = require('mongoose')
+var mongoose = require('mongoose')
 mongoose.connect('mongodb://localhost:27017') // connect to our database
 
-// Create /api router
-var api = require("./api")
-
-// Create /api/event router
-var events = require('./events')
-
-// Create /api/media
-var media = require('./media')
+// CREATE ROUTES ---------------------------------
+var api = require("./api") // Create /api router
+var events = require('./events') // Create /api/event router
+var media = require('./media') // Create /api/media
 
 // REGISTER OUR ROUTES -------------------------------
 app.use('/', router)

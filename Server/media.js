@@ -27,10 +27,9 @@ var storage = multer.diskStorage({
   }
 })
 
-var upload = multer({
-  storage: storage
- })
+var upload = multer({ storage: storage })
 
+// UPLOAD IMAGES ---------------------------------------------
 router.post('/photos/upload', upload.single("photo"), function (req, res, next) {
     //console.log(req.body); // form fields
     //console.log(req.file); // form files
@@ -54,7 +53,6 @@ router.post('/photos/upload', upload.single("photo"), function (req, res, next) 
         mv(tmpDir + req.file.filename, dir + filename, function(err) {
           if(err)
             res.send(err)
-
           // Return the json object with the path to the file
           res.json({ path: "/static/" + filename }).end()
         })
