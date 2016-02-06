@@ -45,7 +45,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
         self.event.location = locationTextField.text!
         self.event.start = startTimeDatePicker.description
         self.event.end = endTimeDatePicker.description
-        self.event.description = descriptionTextView.description
+        self.event.description = descriptionTextView.text
         // image stuff later
         // self.event.image = imageView.image
         
@@ -66,11 +66,8 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
             self.event.start = startTimeDatePicker.description
             self.event.end = endTimeDatePicker.description
             self.event.description = descriptionTextView.description
-            
-            
-            
-         //   let svc = segue.destinationViewController as! DetailViewController
-         //  svc.detailItem = event
+            HackySplitViewController.passedDetailItem = event
+            HackySplitViewController.justAdded = true
 
             //MasterViewController.unwindForSegue(segue, towardsViewController: MasterViewController())
            // var svc = segue.destinationViewController as! MasterViewController;

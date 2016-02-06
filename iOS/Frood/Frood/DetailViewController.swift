@@ -28,33 +28,42 @@ class DetailViewController: UIViewController {
     }
 
     func configureView() {
-        // Update the user interface for the detail item.
-        if let event = self.detailItem {
-            // Setting stuff up based on the detailItem (the Event!)
-            self.eventNameLabel.title = event.title
-            if let startTime = self.startTime {
-                startTime.text = event.start
+        if (HackySplitViewController.justAdded != nil) {
+            configureEvent(HackySplitViewController.passedDetailItem)
+            HackySplitViewController.justAdded = false
+        } else {
+            // Update the user interface for the detail item.
+            if let event = self.detailItem {
+                // Setting stuff up based on the detailItem (the Event!)
+                configureEvent(event)
             }
-            if let endTime = self.endTime {
-                endTime.text = event.end
-            }
-            if let foodImage = imageView {
-                foodImage.image = event.foodImage
-            }
-            if let description = descriptionTextView {
-                description.text = event.description
-            }
-            if let location = locationTextView {
-                location.text = event.location
-            }
-            if let heart = heartImageView {
-                heart.image = UIImage(named: "filledHeart")
-            }
-            if let report = reportImageView {
-                report.image = UIImage(named: "filledExclamationPoint")
-            }
-
         }
+    }
+    
+    func configureEvent(event:Event) {
+        self.eventNameLabel.title = event.title
+        if let startTime = self.startTime {
+            startTime.text = event.start
+        }
+        if let endTime = self.endTime {
+            endTime.text = event.end
+        }
+        if let foodImage = imageView {
+            foodImage.image = event.foodImage
+        }
+        if let description = descriptionTextView {
+            description.text = event.description
+        }
+        if let location = locationTextView {
+            location.text = event.location
+        }
+        if let heart = heartImageView {
+            heart.image = UIImage(named: "filledHeart")
+        }
+        if let report = reportImageView {
+            report.image = UIImage(named: "filledExclamationPoint")
+        }
+
     }
 
     override func viewDidLoad() {

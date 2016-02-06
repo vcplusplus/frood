@@ -24,6 +24,8 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        // load up everything we have so far
+        // requires API call !!!!
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -39,22 +41,11 @@ class MasterViewController: UITableViewController {
     func insertNewObject(sender: AnyObject) {
         // eventually pull up a view that's like hey set up this event !!
           performSegueWithIdentifier("addNewItem", sender:self)
-       // events.insert(Event(), atIndex: 0)
-       // let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-      //  self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-
+        //events.insert(e, atIndex: 0)
+        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
-    
-    override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        let source = unwindSegue.sourceViewController as! AddNewItemViewController
-        let event:Event = source.event
-        // get vars from the sourceViewController and set them equal to stuff
-        events.insert(event, atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        self.tableView.reloadData()
-    }
     
     // MARK: - Segues
 
