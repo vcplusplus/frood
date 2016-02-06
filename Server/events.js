@@ -18,7 +18,10 @@ router.route('/')
   .post(function(req, res) {
 
     if(req.body.name && req.body.description && req.body.location && req.body.host && req.body.start && req.body.end && req.body.tags) {
+
+      // Create the new event
       var event = new Event()
+
       event.name = req.body.name
       event.description = req.body.description
       event.location = req.body.location
@@ -27,7 +30,7 @@ router.route('/')
       event.end = new Date(req.body.end)
       event.tags = req.body.tags
 
-      event.save(function(err, event) {
+      event.save(function(err, event) { // Save the event
         if (err)
           res.send(err)
 
@@ -48,7 +51,6 @@ router.route('/')
     Event.find(function(err, events) {
       if (err)
         res.send(err)
-
       res.json(events)
     })
   })
@@ -57,7 +59,6 @@ router.route('/')
 // -------------------------------------
 // /events/56b561b3f0d3303239000001
 // -------------------------------------
-
 router.route('/:event_id')
 
   // -------------------------------------
@@ -131,7 +132,6 @@ router.route('/:event_id/report')
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
         res.send(err)
-
       event.reports += 1
       event.save(function(err) {
         if (err)
@@ -153,7 +153,6 @@ router.route('/:event_id/heart')
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
         res.send(err)
-
       event.hearts += 1
       event.save(function(err) {
         if (err)
@@ -170,11 +169,9 @@ router.route('/:event_id/heart')
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
         res.send(err)
-
       if(event.hearts >= 1) {
         event.hearts -= 1
       }
-
       event.save(function(err) {
         if (err)
           res.send(err)
