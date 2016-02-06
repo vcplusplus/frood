@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		11EB33FFBAF194BDAAE8D5BE /* Pods_Frood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */; };
+		28DF1F741C66618D009DA796 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF1F731C66618D009DA796 /* ViewModel.swift */; };
+		28DF1F761C666732009DA796 /* FroodAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DF1F751C666732009DA796 /* FroodAPI.swift */; };
 		EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CC1C65950200018BE6 /* AppDelegate.swift */; };
 		EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CE1C65950200018BE6 /* MasterViewController.swift */; };
 		EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7D01C65950200018BE6 /* DetailViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		28DF1F731C66618D009DA796 /* ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		28DF1F751C666732009DA796 /* FroodAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FroodAPI.swift; sourceTree = "<group>"; };
 		7130AED2C4E7ABB12AF2F2CA /* Pods-Frood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.debug.xcconfig"; sourceTree = "<group>"; };
 		A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBBE8D13A675829B72CFFCA /* Pods-Frood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.release.xcconfig"; sourceTree = "<group>"; };
@@ -129,9 +133,11 @@
 			children = (
 				EB42F7CC1C65950200018BE6 /* AppDelegate.swift */,
 				EB42F7CE1C65950200018BE6 /* MasterViewController.swift */,
+				28DF1F731C66618D009DA796 /* ViewModel.swift */,
 				EB42F7D01C65950200018BE6 /* DetailViewController.swift */,
 				EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */,
 				EB4B40341C667A61007A3DB6 /* HackySplitViewController.swift */,
+				28DF1F751C666732009DA796 /* FroodAPI.swift */,
 				EB42F7D21C65950200018BE6 /* Main.storyboard */,
 				EB42F7D51C65950300018BE6 /* Assets.xcassets */,
 				EB42F7DA1C65950300018BE6 /* Info.plist */,
@@ -344,9 +350,11 @@
 			files = (
 				EB42F7FF1C6642D900018BE6 /* Event.swift in Sources */,
 				EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */,
+				28DF1F761C666732009DA796 /* FroodAPI.swift in Sources */,
 				EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */,
 				EB4B40331C6654B5007A3DB6 /* AddNewItemViewController.swift in Sources */,
 				EB4B40351C667A61007A3DB6 /* HackySplitViewController.swift in Sources */,
+				28DF1F741C66618D009DA796 /* ViewModel.swift in Sources */,
 				EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

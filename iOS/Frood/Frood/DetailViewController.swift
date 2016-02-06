@@ -17,8 +17,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var locationTextView: UITextView!
-    @IBOutlet weak var heartImageView: UIImageView!
-    @IBOutlet weak var reportImageView: UIImageView!
+    
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
+    
+    var happyHeart:Bool!
+    var negativeReport:Bool!
     
     var detailItem: Event? {
         didSet {
@@ -44,7 +48,7 @@ class DetailViewController: UIViewController {
     }
     
     func configureEvent(event:Event) {
-        self.eventNameLabel.title = event.title
+        self.eventNameLabel.title = event.name
         if let startTime = self.startTime {
             startTime.text = event.start
         }
@@ -52,7 +56,7 @@ class DetailViewController: UIViewController {
             endTime.text = event.end
         }
         if let foodImage = imageView {
-            foodImage.image = event.foodImage
+            foodImage.image = event.image
         }
         if let description = descriptionTextView {
             description.text = event.description
@@ -60,13 +64,36 @@ class DetailViewController: UIViewController {
         if let location = locationTextView {
             location.text = "Location: \(event.location)"
         }
-        if let heart = heartImageView {
-            heart.image = UIImage(named: "filledHeart")
+        if let heart = heartButton {
+            happyHeart = false;
+            heart.setImage(UIImage(named:"unfilledHeart"), forState: UIControlState.Normal)
+            
         }
-        if let report = reportImageView {
-            report.image = UIImage(named: "filledExclamationPoint")
+        if let report = reportButton {
+            negativeReport = false;
+            report.setImage(UIImage(named:"unfilledExclamationPoint"), forState: UIControlState.Normal)
         }
-
+    }
+    
+    @IBAction func heartButtonPressed(sender: AnyObject) {
+        if (happyHeart!) {
+            heartButton.setImage(UIImage(named:"unfilledHeart"), forState: UIControlState.Normal)
+            happyHeart = false
+        } else {
+            heartButton.setImage(UIImage(named:"filledHeart"), forState: UIControlState.Normal)
+            happyHeart = true
+        }
+    }
+    
+    @IBAction func reportButtonPressed(sender: AnyObject) {
+        if (negativeReport!) {
+            reportButton.setImage(UIImage(named:"unfilledExclamationPoint"), forState: UIControlState.Normal)
+            negativeReport = false
+        } else {
+            reportButton.setImage(UIImage(named: "filledExclamationPoint"),
+                forState:UIControlState.Normal)
+            negativeReport = true
+        }
     }
 
     override func viewDidLoad() {
@@ -79,6 +106,8 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
 
 }
