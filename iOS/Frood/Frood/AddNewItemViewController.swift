@@ -11,4 +11,22 @@ import UIKit
 
 class AddNewItemViewController : UIViewController {
     
+    @IBOutlet weak var nameOfEventTextField: UITextField!
+    @IBOutlet weak var locationTextField: UITextField!
+    @IBOutlet weak var startTimeDatePicker: UIDatePicker!
+    @IBOutlet weak var endTimeDatePicker: UIDatePicker!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    var event:Event
+    
+    @IBAction func uploadImageButtonPressed(sender: AnyObject) {
+        
+    }
+    
+    
+    @IBAction func submitEventButtonPressed(sender: AnyObject) {
+        
+        
+    }
+    
 }

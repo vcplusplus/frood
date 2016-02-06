@@ -27,6 +27,15 @@ class Event {
         foodImage = UIImage(named: "foodImagePlaceholder")!
     }
     
+    init(title:String, start:String, end:String, location:String, description:String, foodImage:UIImage) {
+        self.title = title
+        self.start = start
+        self.end = end
+        self.location = location
+        self.description = description
+        self.foodImage = foodImage
+    }
+    
     /// somekind of requests
    // @NSManaged var longitude: Double
    // @NSManaged var latitude: Double

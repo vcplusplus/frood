@@ -252,15 +252,35 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-F9-D7h">
-                                <rect key="frame" x="389" y="46" width="147" height="43"/>
+                                <rect key="frame" x="388" y="38" width="147" height="43"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Upload Image">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="uploadImageButtonPressed:" destination="0hW-r9-tpm" eventType="touchUpInside" id="lkO-eH-9ft"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-bh-Fbe">
+                                <rect key="frame" x="388" y="93" width="147" height="43"/>
+                                <color key="backgroundColor" red="0.95294117649999999" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Submit Event">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitEventButtonPressed:" destination="0hW-r9-tpm" eventType="touchUpInside" id="N2s-ee-38X"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="FBz-XE-BL0" id="e3t-VH-2x3"/>
+                        <outlet property="endTimeDatePicker" destination="bdJ-7J-kTf" id="HB2-tc-PJb"/>
+                        <outlet property="locationTextField" destination="5dx-Z1-mcr" id="kUa-Iy-Ye0"/>
+                        <outlet property="nameOfEventTextField" destination="bnF-nK-GQp" id="ySs-L6-6mk"/>
+                        <outlet property="startTimeDatePicker" destination="euo-ZV-bOm" id="UqJ-5h-sdw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vYS-Ry-vph" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
