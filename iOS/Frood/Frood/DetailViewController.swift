@@ -48,7 +48,7 @@ class DetailViewController: UIViewController {
     }
     
     func configureEvent(event:Event) {
-        self.eventNameLabel.title = event.title
+        self.eventNameLabel.title = event.name
         if let startTime = self.startTime {
             startTime.text = event.start
         }
@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
             endTime.text = event.end
         }
         if let foodImage = imageView {
-            foodImage.image = event.foodImage
+            foodImage.image = event.image
         }
         if let description = descriptionTextView {
             description.text = event.description

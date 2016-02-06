@@ -8,13 +8,36 @@
 
 import Foundation
 
+protocol EventReceiver {
+    func OnEventsReceived(events:[Event])
+}
+
 class ViewModel {
     
-    func getCurrentEvents() -> [Event] {
-        return [Event(json: testJSON)!,Event(json: testJSON)!]
+    let API:FroodAPI
+    var receiver:EventReceiver?
+    
+    init() {
+        API = FroodAPI(serverURL: "http://frood.georgewitteman.com")
+    }
+    
+    func setEventReceiver(receiver:EventReceiver) {
+        self.receiver = receiver
+    }
+    
+    
+    func requestCurrentEvents() {
+        
+        API.getAllEvents({(events:[Event]?, error:String?) -> Void in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            self.receiver?.OnEventsReceived(events!)
+        })
     }
     
     func addEvent(newEvent:Event) {
-        
+        API.addEvent(newEvent)
     }
 }

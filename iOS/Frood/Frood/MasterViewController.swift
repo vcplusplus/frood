@@ -8,7 +8,8 @@
 
 import UIKit
 
-class MasterViewController: UITableViewController {
+class MasterViewController: UITableViewController{
+    @IBOutlet var table: UITableView!
 
     var detailViewController: DetailViewController? = nil
     var events = [Event]()
@@ -17,24 +18,12 @@ class MasterViewController: UITableViewController {
     static var isThereAPassedEvent:Bool!
 
     var model:ViewModel?
-    var api:FroodAPI?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         model = ViewModel()
-        api = FroodAPI(serverURL: "http://frood.georgewitteman.com")
-        api!.getAllEvents({(events:[Event]?, error:String?) -> Void in
-            guard error == nil else {
-                print(error)
-                return
-            }
-            
-            
-            self.events = events!
-            print(events)
-        })
-//        usleep(50000)
-        api!.addEvent(Event(json: testJSON)!)
+        model?.setEventReceiver(self)
+        model?.requestCurrentEvents()
         // Do any additional setup after loading the view, typically from a nib.
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -78,7 +67,7 @@ class MasterViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "showDetail" {
             if let indexPath = self.tableView.indexPathForSelectedRow {
-                let event = events[indexPath.row] as! Event
+                let event = events[indexPath.row]
                 let controller = (segue.destinationViewController as! UINavigationController).topViewController as! DetailViewController
                 controller.detailItem = event // passing our event
                 controller.navigationItem.leftBarButtonItem = self.splitViewController?.displayModeButtonItem()
@@ -103,7 +92,7 @@ class MasterViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Set up cell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let object = events[indexPath.row] as! Event
+        let object = events[indexPath.row]
         cell.textLabel!.text = object.name!
         return cell
     }
@@ -123,5 +112,12 @@ class MasterViewController: UITableViewController {
     }
 
 
+}
+
+extension MasterViewController: EventReceiver {
+    func OnEventsReceived(events: [Event]) {
+        self.events = events
+        table.reloadData()
+    }
 }
 

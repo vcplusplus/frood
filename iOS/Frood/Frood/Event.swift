@@ -56,6 +56,9 @@ struct Event:Decodable {
 //        self.description = description
 //        self.foodImage = foodImage
 //    }
+    init() {
+        
+    }
     
     
      init?(json: JSON) {
