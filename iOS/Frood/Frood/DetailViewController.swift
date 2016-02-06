@@ -40,7 +40,7 @@ class DetailViewController: UIViewController {
                 end.text = "7:00pm Feb. 6th"
             }
             if let image = self.imageView {
-                
+                image.image = UIImage(named: "foodImagePlaceholder")
             }
 
             if let description = self.descriptionTextView {
@@ -51,10 +51,10 @@ class DetailViewController: UIViewController {
                 tags.text = "Tags: Pizza"
             }
             if let heart = self.heartImageView {
-                
+                heart.image = UIImage(named: "heartImagePlaceholder")
             }
             if let report = self.reportImageView {
-                
+                report.image = UIImage(named: "reportImagePlaceholder")
             }
         }
     }
