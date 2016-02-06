@@ -23,6 +23,9 @@ router.route('/')
       var event = new Event()
 
       event.name = req.body.name
+      if(req.body.photo) {
+        event.photo = req.body.photo
+      }
       event.description = req.body.description
       event.location = req.body.location
       event.host = req.body.host
@@ -85,6 +88,9 @@ router.route('/:event_id')
       }
       if(req.body.description) {
         event.description = req.body.description
+      }
+      if(req.body.photo) {
+        event.photo = req.body.photo
       }
       if(req.body.location) {
         event.location = req.body.location

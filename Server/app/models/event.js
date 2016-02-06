@@ -3,6 +3,7 @@ var Schema = mongoose.Schema
 
 var EventSchema = new Schema({
 	name: String,
+	photo: String,
   description: String,
 	location: String,
 	host: String,
