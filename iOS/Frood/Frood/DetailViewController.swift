@@ -20,6 +20,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var reportImageView: UIImageView!
     
+    @IBOutlet weak var heartButton: UIButton!
+    @IBOutlet weak var reportButton: UIButton!
+    
+    var happyHeart:Bool!
+    var negativeReport:Bool!
+    
     var detailItem: Event? {
         didSet {
             // Update the view.
@@ -61,12 +67,35 @@ class DetailViewController: UIViewController {
             location.text = "Location: \(event.location)"
         }
         if let heart = heartImageView {
-            heart.image = UIImage(named: "filledHeart")
+            happyHeart = false;
+            heart.image = UIImage(named: "unfilledHeart")
+            
         }
         if let report = reportImageView {
-            report.image = UIImage(named: "filledExclamationPoint")
+            negativeReport = false;
+            report.image = UIImage(named: "unfilledExclamationPoint")
         }
-
+    }
+    
+    func heartButtonPressed() {
+        if (happyHeart != nil) {
+            heartButton.setImage(UIImage(named:"unfilledHeart"), forState: UIControlState.Normal)
+            happyHeart = false
+        } else {
+            heartButton.setImage(UIImage(named:"filledHeart"), forState: UIControlState.Normal)
+            happyHeart = true
+        }
+    }
+    
+    func reportButtonPressed() {
+        if (negativeReport != nil) {
+            reportButton.setImage(UIImage(named:"unfilledExclamationPoint"), forState: UIControlState.Normal)
+            negativeReport = false
+        } else {
+            reportButton.setImage(UIImage(named: "filledExclamationPoint"),
+                forState:UIControlState.Normal)
+            negativeReport = true
+        }
     }
 
     override func viewDidLoad() {
@@ -79,6 +108,8 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
 
 }
