@@ -15,21 +15,25 @@ router.route('/')
   // create a event (accessed at POST http://localhost:8080/events)
   .post(function(req, res) {
 
-    var event = new Event();
-    event.name = req.body.name;
-    event.description = req.body.description;
-    event.location = req.body.location;
-    event.host = req.body.host;
-    event.start = new Date(req.body.start);
-    event.end = new Date(req.body.end);
-    event.tags = req.body.tags;
+    if(req.body.name && req.body.description && req.body.location && req.body.host && req.body.start && req.body.end && req.body.tags) {
+      var event = new Event();
+      event.name = req.body.name;
+      event.description = req.body.description;
+      event.location = req.body.location;
+      event.host = req.body.host;
+      event.start = new Date(req.body.start);
+      event.end = new Date(req.body.end);
+      event.tags = req.body.tags;
 
-    event.save(function(err) {
-      if (err)
-        res.send(err);
+      event.save(function(err) {
+        if (err)
+          res.send(err);
 
-      res.json("Successfully added event");
-    });
+        res.json({ message: "Successfully added event" });
+      });
+    } else {
+      res.json({ message: "Error! You did not include all the required info." });
+    }
   })
 
   // get all the events (accessed at GET http://localhost:8080/api/events)
