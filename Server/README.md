@@ -18,7 +18,7 @@ You can upload png, gif, and jpg files.
 ```
 [
   {
-    _id: 56b561b3f0d3303239000001,
+    id: 56b561b3f0d3303239000001,
     name: "Event Name",
     description: "Event Description",
     location: "Event Location",
@@ -33,7 +33,7 @@ You can upload png, gif, and jpg files.
     ]
   }
   {
-    _id: 56b561b3f0d3303239000001,
+    id: 56b561b3f0d3303239000001,
     name: "Event Name",
     description: "Event Description",
     ...
@@ -60,7 +60,7 @@ On failure:
 Gets the json object for the event
 ```
 {
-  _id: 56b561b3f0d3303239000001,
+  id: 56b561b3f0d3303239000001,
   name: "Event Name",
   description: "Event Description",
   location: "Event Location",
