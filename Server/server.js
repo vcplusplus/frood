@@ -31,6 +31,8 @@ router.get("/", function(req, res) {
 	res.json({ message: 'The API is at /api' });
 });
 
+app.use('/static', express.static('uploads'));
+
 // Connect to the database
 var mongoose   = require('mongoose');
 mongoose.connect('mongodb://localhost:27017'); // connect to our database
