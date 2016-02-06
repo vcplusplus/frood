@@ -1,4 +1,5 @@
-// !$*UTF8*$!
+
+                "host" ~~> self.host// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
@@ -353,11 +354,8 @@
 				28DF1F761C666732009DA796 /* FroodAPI.swift in Sources */,
 				EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */,
 				EB4B40331C6654B5007A3DB6 /* AddNewItemViewController.swift in Sources */,
-<<<<<<< HEAD
 				EB4B40351C667A61007A3DB6 /* HackySplitViewController.swift in Sources */,
-=======
 				28DF1F741C66618D009DA796 /* ViewModel.swift in Sources */,
->>>>>>> 3626ea5... wip api
 				EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
