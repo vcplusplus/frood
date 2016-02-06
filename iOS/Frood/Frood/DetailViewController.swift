@@ -58,7 +58,7 @@ class DetailViewController: UIViewController {
             description.text = event.description
         }
         if let location = locationTextView {
-            location.text = event.location
+            location.text = "Location: \(event.location)"
         }
         if let heart = heartImageView {
             heart.image = UIImage(named: "filledHeart")
