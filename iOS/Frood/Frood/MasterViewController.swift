@@ -12,7 +12,9 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var events = [AnyObject]()
-    var passedEvent:Event!
+    // also very bad and hacky
+    static var passedEvent:Event!
+    static var isThereAPassedEvent:Bool!
 
 
     override func viewDidLoad() {
@@ -24,13 +26,23 @@ class MasterViewController: UITableViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
-        // load up everything we have so far
-        // requires API call !!!!
     }
+
 
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
+        if (MasterViewController.isThereAPassedEvent != nil) {
+            events.append(MasterViewController.passedEvent)
+        }
+        // load up everything we have so far
+        // requires API call !!!!
+        //if (MasterViewController.isThereAPassedEvent != nil) {
+        //    events.insert(MasterViewController.passedEvent, atIndex: 0)
+        //    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+         //   MasterViewController.isThereAPassedEvent = false
+        //}
     }
 
     override func didReceiveMemoryWarning() {

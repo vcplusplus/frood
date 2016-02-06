@@ -31,6 +31,9 @@ class DetailViewController: UIViewController {
         if (HackySplitViewController.justAdded != nil) {
             configureEvent(HackySplitViewController.passedDetailItem)
             HackySplitViewController.justAdded = false
+            MasterViewController.passedEvent = HackySplitViewController.passedDetailItem
+            MasterViewController.isThereAPassedEvent = true
+            
         } else {
             // Update the user interface for the detail item.
             if let event = self.detailItem {
