@@ -16,9 +16,25 @@ class MasterViewController: UITableViewController {
     static var passedEvent:Event!
     static var isThereAPassedEvent:Bool!
 
+    var model:ViewModel?
+    var api:FroodAPI?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        model = ViewModel()
+        api = FroodAPI(serverURL: "http://frood.georgewitteman.com")
+        api!.getAllEvents({(events:[Event]?, error:String?) -> Void in
+            guard error == nil else {
+                print(error)
+                return
+            }
+            
+            
+            self.events = events!
+            print(events)
+        })
+//        usleep(50000)
+        api!.addEvent(Event(json: testJSON)!)
         // Do any additional setup after loading the view, typically from a nib.
         if let split = self.splitViewController {
             let controllers = split.viewControllers
@@ -88,7 +104,7 @@ class MasterViewController: UITableViewController {
         // Set up cell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let object = events[indexPath.row] as! Event
-        cell.textLabel!.text = object.title
+        cell.textLabel!.text = object.name!
         return cell
     }
 

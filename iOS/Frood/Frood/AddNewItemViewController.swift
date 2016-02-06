@@ -54,7 +54,6 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
     
     
     @IBAction func submitEventButtonPressed(sender: AnyObject) {
-        
         // go back to other view
         performSegueWithIdentifier("backToMaster", sender: self)
     }
@@ -65,7 +64,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
         if (segue.identifier == "backToMaster") {
             self.event = Event()
             // set stuff up about the event
-            self.event.title = nameOfEventTextField.text!
+            self.event.name = nameOfEventTextField.text!
             self.event.location = locationTextField.text!
             
             let dateFormatter = NSDateFormatter()
@@ -78,7 +77,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
             
             // Set up image
             if let food = foodImage {
-                self.event.foodImage = food
+                self.event.image = food
             }
             
             
