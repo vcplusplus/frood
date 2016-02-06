@@ -1,5 +1,4 @@
-
-                "host" ~~> self.host// !$*UTF8*$!
+// !$*UTF8*$!
 {
 	archiveVersion = 1;
 	classes = {
