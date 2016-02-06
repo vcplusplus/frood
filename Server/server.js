@@ -29,7 +29,7 @@ app.use('/static', express.static('uploads'))
 
 // Connect to the database
 var mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017') // connect to our database
+mongoose.connect('mongodb://localhost:27017/frood') // connect to our database
 
 // CREATE ROUTES ---------------------------------
 var api = require("./api") // Create /api router
