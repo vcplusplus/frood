@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		11EB33FFBAF194BDAAE8D5BE /* Pods_Frood.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */; };
-		74C117FE1C66542F00B7851A /* filledHeartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C117FD1C66542F00B7851A /* filledHeartIcon.png */; };
-		74C118001C66543B00B7851A /* unfilledHeartIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */; };
 		EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CC1C65950200018BE6 /* AppDelegate.swift */; };
 		EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7CE1C65950200018BE6 /* MasterViewController.swift */; };
 		EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7D01C65950200018BE6 /* DetailViewController.swift */; };
@@ -43,8 +41,6 @@
 		7130AED2C4E7ABB12AF2F2CA /* Pods-Frood.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.debug.xcconfig"; sourceTree = "<group>"; };
 		A2E879D6E06DEB8B08D20DE5 /* Pods_Frood.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Frood.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFBBE8D13A675829B72CFFCA /* Pods-Frood.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Frood.release.xcconfig"; path = "Pods/Target Support Files/Pods-Frood/Pods-Frood.release.xcconfig"; sourceTree = "<group>"; };
-		74C117FD1C66542F00B7851A /* filledHeartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = filledHeartIcon.png; path = ../../../../../Desktop/filledHeartIcon.png; sourceTree = "<group>"; };
-		74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unfilledHeartIcon.png; path = ../../../../../Desktop/unfilledHeartIcon.png; sourceTree = "<group>"; };
 		EB42F7C91C65950200018BE6 /* Frood.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Frood.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB42F7CC1C65950200018BE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EB42F7CE1C65950200018BE6 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -137,8 +133,6 @@
 				EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */,
 				EB42F7D21C65950200018BE6 /* Main.storyboard */,
 				EB42F7D51C65950300018BE6 /* Assets.xcassets */,
-				74C117FF1C66543B00B7851A /* unfilledHeartIcon.png */,
-				74C117FD1C66542F00B7851A /* filledHeartIcon.png */,
 				EB42F7D71C65950300018BE6 /* LaunchScreen.storyboard */,
 				EB42F7DA1C65950300018BE6 /* Info.plist */,
 				EB42F7FE1C6642D900018BE6 /* Event.swift */,
@@ -275,10 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB42F7D91C65950300018BE6 /* LaunchScreen.storyboard in Resources */,
-				74C118001C66543B00B7851A /* unfilledHeartIcon.png in Resources */,
 				EB42F7D61C65950300018BE6 /* Assets.xcassets in Resources */,
 				EB42F7D41C65950200018BE6 /* Main.storyboard in Resources */,
-				74C117FE1C66542F00B7851A /* filledHeartIcon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
