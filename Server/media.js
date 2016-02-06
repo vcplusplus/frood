@@ -1,13 +1,13 @@
-var express = require('express');
-var router = express.Router();
-var multer  =   require('multer');
-var fs = require('fs');
-var crypto = require('crypto');
-var mv = require('mv');
-var mime = require('mime');
+var express = require('express')
+var router = express.Router()
+var multer  =   require('multer')
+var fs = require('fs')
+var crypto = require('crypto')
+var mv = require('mv')
+var mime = require('mime')
 
-var tmpDir = "./uploads/tmp/"; // Directory to upload files to
-var dir = "./uploads/"
+var tmpDir = "./uploads/tmp/" // Directory to upload files to
+var dir = "./uploads/" // Final resting place of files
 
 // A checksum helper function
 function checksum (str, algorithm, encoding) {
@@ -23,13 +23,13 @@ var storage = multer.diskStorage({
     cb(null, tmpDir)
   },
   filename: function (req, file, cb) {
-      cb(null, Date.now() + '.' + file.originalname);
+      cb(null, Date.now() + '.' + file.originalname)
   }
-});
+})
 
 var upload = multer({
   storage: storage
- } );
+ })
 
 router.post('/photos/upload', upload.single("photo"), function (req, res, next) {
     //console.log(req.body); // form fields
@@ -38,16 +38,16 @@ router.post('/photos/upload', upload.single("photo"), function (req, res, next) 
     // Read in the uploaded file from the temp directory.
     fs.readFile(tmpDir + req.file.filename, function (err, data) {
         // Hash the file
-        var hash = checksum(data); // e53815e8c095e270c6560be1bb76a65d
+        var hash = checksum(data) // e53815e8c095e270c6560be1bb76a65d
 
         // File extension
-        var extension = mime.extension(req.file.mimetype);
+        var extension = mime.extension(req.file.mimetype)
         if(extension == "jpeg") {
-          extension = "jpg";
+          extension = "jpg"
         }
 
         // The new filename from the hash and mimetype
-        var filename = hash + "." + extension;
+        var filename = hash + "." + extension
 
         // Move the file from the temp directory to the uploads directory with
         // hashed filenaeme
@@ -56,14 +56,9 @@ router.post('/photos/upload', upload.single("photo"), function (req, res, next) 
             res.send(err)
 
           // Return the json object with the path to the file
-          res.json({ path: "/static/" + filename }).end();
-        });
-    });
+          res.json({ path: "/static/" + filename }).end()
+        })
+    })
+})
 
-
-
-});
-
-
-
-module.exports = router;
+module.exports = router
