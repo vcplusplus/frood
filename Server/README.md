@@ -43,7 +43,7 @@ You can upload png, gif, and jpg files.
 ```
 
 #### POST
-Post must include `name`, `description`, `location`, `host`, `start`, `end`, `tags`. On success:
+Post must include `name`, `description`, `location`, `host`, `start`, `end`. On success:
 ```
 {
   id: 56b603b927639a1a03000001,

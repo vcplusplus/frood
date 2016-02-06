@@ -17,7 +17,7 @@ router.route('/')
   // ----------------
   .post(function(req, res) {
 
-    if(req.body.name && req.body.description && req.body.location && req.body.host && req.body.start && req.body.end && req.body.tags) {
+    if(req.body.name && req.body.description && req.body.location && req.body.host && req.body.start && req.body.end) {
 
       // Create the new event
       var event = new Event()
@@ -31,7 +31,9 @@ router.route('/')
       event.host = req.body.host
       event.start = new Date(req.body.start)
       event.end = new Date(req.body.end)
-      event.tags = req.body.tags
+      if(req.body.tags) {
+        event.tags = req.body.tags
+      }
 
       event.save(function(err, event) { // Save the event
         if (err)
