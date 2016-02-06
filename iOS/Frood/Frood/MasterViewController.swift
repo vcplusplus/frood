@@ -31,6 +31,7 @@ class MasterViewController: UITableViewController{
         }
         // load up everything we have so far
         // requires API call !!!!
+        self.refreshControl?.addTarget(self, action: "handleRefresh:", forControlEvents: UIControlEvents.ValueChanged)
         reloadInputViews()
     }
 
@@ -40,7 +41,7 @@ class MasterViewController: UITableViewController{
         super.viewWillAppear(animated)
         if let bo = MasterViewController.isThereAPassedEvent {
             if (bo) {
-                events.append(MasterViewController.passedEvent)
+//                events.append(MasterViewController.passedEvent)
                 //events.insert(MasterViewController.passedEvent, atIndex: 0)
                // let indexPath = NSIndexPath(forRow: 0, inSection: 0)
                // self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
@@ -60,6 +61,10 @@ class MasterViewController: UITableViewController{
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func handleRefresh(refreshControl: UIRefreshControl) {
+        model?.requestCurrentEvents()
     }
     
     // MARK: - Segues
@@ -117,6 +122,7 @@ class MasterViewController: UITableViewController{
 extension MasterViewController: EventReceiver {
     func OnEventsReceived(events: [Event]) {
         self.events = events
+        refreshControl?.endRefreshing() 
         table.reloadData()
     }
 }

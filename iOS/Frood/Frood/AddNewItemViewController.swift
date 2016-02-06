@@ -20,9 +20,11 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
 
     var event:Event!
     var foodImage:UIImage!
+    var model:ViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.model = ViewModel()
         self.nameOfEventTextField.delegate = self;
         self.locationTextField.delegate = self;
         self.descriptionTextView.delegate = self;
@@ -55,6 +57,26 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
 
     @IBAction func submitEventButtonPressed(sender: AnyObject) {
         // go back to other view
+        self.event = Event()
+        // set stuff up about the event
+        self.event.name = nameOfEventTextField.text!
+        self.event.location = locationTextField.text!
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        self.event.start = dateFormatter.stringFromDate(startTimeDatePicker.date)
+        self.event.end = dateFormatter.stringFromDate(endTimeDatePicker.date)
+        self.event.host = "  "
+        self.event.description = descriptionTextView.text
+        
+        // Set up image
+        if let food = foodImage {
+            self.event.image = food
+        }
+        
+        //            model?.addEvent(Event(json: testJSON)!)
+        model?.addEvent(event)
         performSegueWithIdentifier("backToMaster", sender: self)
     }
 
@@ -62,24 +84,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "backToMaster") {
-            self.event = Event()
-            // set stuff up about the event
-            self.event.name = nameOfEventTextField.text!
-            self.event.location = locationTextField.text!
-
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateStyle = NSDateFormatterStyle.ShortStyle
-            dateFormatter.timeStyle = NSDateFormatterStyle.ShortStyle
-            self.event.start = dateFormatter.stringFromDate(startTimeDatePicker.date)
-            self.event.end = dateFormatter.stringFromDate(endTimeDatePicker.date)
-
-            self.event.description = descriptionTextView.text
-
-            // Set up image
-            if let food = foodImage {
-                self.event.image = food
-            }
-
+            
 
             HackySplitViewController.passedDetailItem = event
             HackySplitViewController.justAdded = true
