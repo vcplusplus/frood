@@ -16,11 +16,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var endTime: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var descriptionTextView: UITextView!
-    @IBOutlet weak var tagsTextView: UITextView!
+    @IBOutlet weak var locationTextView: UITextView!
     @IBOutlet weak var heartImageView: UIImageView!
     @IBOutlet weak var reportImageView: UIImageView!
     
-    var detailItem: AnyObject? {
+    var detailItem: Event? {
         didSet {
             // Update the view.
             self.configureView()
@@ -29,33 +29,31 @@ class DetailViewController: UIViewController {
 
     func configureView() {
         // Update the user interface for the detail item.
-        if let _ = self.detailItem {
-            if let eventTitle = self.eventNameLabel {
-                eventTitle.title = "CommunityHack"
+        if let event = self.detailItem {
+            // Setting stuff up based on the detailItem (the Event!)
+            self.eventNameLabel.title = event.title
+            if let startTime = self.startTime {
+                startTime.text = event.start
             }
-            if let start = self.startTime {
-                start.text = "7:00pm Feb. 5th"
+            if let endTime = self.endTime {
+                endTime.text = event.end
             }
-            if let end = self.endTime {
-                end.text = "7:00pm Feb. 6th"
+            if let foodImage = imageView {
+                foodImage.image = event.foodImage
             }
-            if let image = self.imageView {
-                image.image = UIImage(named: "foodImagePlaceholder")
+            if let description = descriptionTextView {
+                description.text = event.description
             }
-
-            if let description = self.descriptionTextView {
-                description.text = "A hackathon for all of your friends! No coding experience needed!!!! Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+            if let location = locationTextView {
+                location.text = event.location
             }
-            
-            if let tags = self.tagsTextView {
-                tags.text = "Tags: Pizza"
-            }
-            if let heart = self.heartImageView {
+            if let heart = heartImageView {
                 heart.image = UIImage(named: "heartImagePlaceholder")
             }
-            if let report = self.reportImageView {
+            if let report = reportImageView {
                 report.image = UIImage(named: "reportImagePlaceholder")
             }
+
         }
     }
 
