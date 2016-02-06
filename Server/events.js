@@ -29,8 +29,10 @@ router.route('/')
       event.description = req.body.description
       event.location = req.body.location
       event.host = req.body.host
-      event.start = new Date(req.body.start)
-      event.end = new Date(req.body.end)
+      //event.start = new Date(req.body.start)
+      //event.end = new Date(req.body.end)
+      event.start = req.body.start;
+      event.end = req.body.end;
       if(req.body.tags) {
         event.tags = req.body.tags
       }
@@ -103,10 +105,10 @@ router.route('/:event_id')
         event.host = req.body.host
       }
       if(req.body.start) {
-        event.start = new Date(req.body.start)
+        event.start = req.body.start
       }
       if(req.body.end) {
-        event.end = new Date(req.body.end)
+        event.end = req.body.end
       }
       if(req.body.tags) {
         event.tags = req.body.tags

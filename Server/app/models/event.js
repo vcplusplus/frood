@@ -7,8 +7,8 @@ var EventSchema = new Schema({
   description: String,
 	location: String,
 	host: String,
-  start: Date,
-	end: Date,
+  start: String,
+	end: String,
 	tags: [String],
 	hearts: {
 		type: Number,
