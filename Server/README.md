@@ -1,6 +1,8 @@
 Frood Server (Node.js)
 ----------------------
 
+This is a node.js/express RESTful server for the frood app.
+
 ## Photos
 ### /api/media/photos/upload
 You can upload png, gif, and jpg files.
@@ -91,18 +93,18 @@ Removes the event with the given id
 #### PUT
 Increments the report count by 1
 ```
-{ message: "Reported!"}
+{ reports: 2 }
 ```
 
 ### /api/event/56b603b927639a1a03000001/heart
 #### PUT
 Increments the heart count by 1
 ```
-{ message: "Hearted!"}
+{ hearts: 11 }
 ```
 
 #### DELETE
 Decrements the heart count by 1 if the heart count is greater than 0
 ```
-{ message: "Unhearted!"}
+{ hearts: 10 }
 ```

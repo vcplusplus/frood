@@ -12,7 +12,9 @@ var Event = require('./app/models/event');
 // ----------------------------------------------------
 router.route('/')
 
-  // create a event (accessed at POST http://localhost:8080/events)
+  // ----------------
+  // Create Event
+  // ----------------
   .post(function(req, res) {
 
     if(req.body.name && req.body.description && req.body.location && req.body.host && req.body.start && req.body.end && req.body.tags) {
@@ -39,7 +41,9 @@ router.route('/')
     }
   })
 
-  // get all the events (accessed at GET http://localhost:8080/api/events)
+  // --------------------------
+  // Get array of all events
+  // --------------------------
   .get(function(req, res) {
     Event.find(function(err, events) {
       if (err)
@@ -49,8 +53,16 @@ router.route('/')
     });
   });
 
+
+// -------------------------------------
+// /events/56b561b3f0d3303239000001
+// -------------------------------------
+
 router.route('/:event_id')
-  // get the event with that id
+
+  // -------------------------------------
+  // Get event by id
+  // -------------------------------------
   .get(function(req, res) {
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
@@ -59,7 +71,9 @@ router.route('/:event_id')
     });
   })
 
-  // update the event with this id
+  // -------------------------------------
+  // Update event by id
+  // -------------------------------------
   .put(function(req, res) {
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
@@ -95,7 +109,9 @@ router.route('/:event_id')
     });
   })
 
-  // delete the event with this id
+  // -------------------------------------
+  // Delete event by id
+  // -------------------------------------
   .delete(function(req, res) {
     Event.remove({
       _id: req.params.event_id
@@ -107,7 +123,9 @@ router.route('/:event_id')
     });
   });
 
-// Report
+// -------------------------------------
+// Report event by id
+// -------------------------------------
 router.route('/:event_id/report')
   .put(function(req, res) {
     Event.findById(req.params.event_id, function(err, event) {
@@ -118,13 +136,19 @@ router.route('/:event_id/report')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json({ message: "Reported!" });
+        res.json({ reports: event.reports });
       });
     });
   });
 
-// Heart
+// ---------------------------------------
+// /events/56b561b3f0d3303239000001/heart
+// ---------------------------------------
 router.route('/:event_id/heart')
+
+  // -------------------------------------
+  // Heart an event by id
+  // -------------------------------------
   .put(function(req, res) {
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
@@ -134,10 +158,14 @@ router.route('/:event_id/heart')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json({message: "Hearted!"});
+        res.json({ hearts: event.hearts });
       });
     });
   })
+
+  // -------------------------------------
+  // Delete an event by id
+  // -------------------------------------
   .delete(function(req,res) {
     Event.findById(req.params.event_id, function(err, event) {
       if (err)
@@ -150,7 +178,7 @@ router.route('/:event_id/heart')
       event.save(function(err) {
         if (err)
           res.send(err);
-        res.json({message: "Unhearted!"});
+        res.json({ hearts: event.hearts });
       });
     });
   });
