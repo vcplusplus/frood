@@ -11,14 +11,19 @@ import UIKit
 class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
-    var events = [AnyObject]()
     // also very bad and hacky
     static var passedEvent:Event!
     static var isThereAPassedEvent:Bool!
 
+    var events = [Event]()
+    var model:ViewModel?
+    var api:FroodAPI?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        model = ViewModel()
+        api = FroodAPI(serverURL: "http://frood.georgewitteman.com")
+        events = api!.getAllEvents()!
         // Do any additional setup after loading the view, typically from a nib.
        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
         self.navigationItem.rightBarButtonItem = addButton
@@ -90,7 +95,7 @@ class MasterViewController: UITableViewController {
         // Set up cell
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         let object = events[indexPath.row] as! Event
-        cell.textLabel!.text = object.title
+        cell.textLabel!.text = object.name!
         return cell
     }
 

@@ -43,7 +43,7 @@ class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextVi
     
     
     @IBAction func submitEventButtonPressed(sender: AnyObject) {
-        self.event = Event()
+        self.event = Event(json: testJSON)
         // set stuff up about the event
         self.event.title = nameOfEventTextField.text!
         self.event.location = locationTextField.text!
