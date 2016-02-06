@@ -37,10 +37,29 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(sender: AnyObject) {
         // eventually pull up a view that's like hey set up this event !!
+       // performSegueWithIdentifier("addNewItem", sender:self)
+        events.insert(Event(), atIndex: 0)
+        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+
+    }
+    
+    override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
+        var source = unwindSegue.sourceViewController as! AddNewItemViewController
+        // get vars from the sourceViewController and set them equal to stuff
         
         events.insert(Event(), atIndex: 0)
         let indexPath = NSIndexPath(forRow: 0, inSection: 0)
         self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+    }
+    
+    - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
+    XYZAddToDoItemViewController *source = [segue sourceViewController];
+    XYZToDoItem *item = source.toDoItem;
+    if (item != nil) {
+    [self.toDoItems addObject:item];
+    }
+    [self.tableView reloadData];
     }
 
     // MARK: - Segues
@@ -55,6 +74,8 @@ class MasterViewController: UITableViewController {
                 controller.navigationItem.leftItemsSupplementBackButton = true
                 
             }
+        } else if segue.identifier == "addNewItem" {
+            
         }
     }
 
