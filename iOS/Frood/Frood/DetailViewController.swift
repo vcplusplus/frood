@@ -62,7 +62,7 @@ class DetailViewController: UIViewController {
             description.text = event.description
         }
         if let location = locationTextView {
-            location.text = "Location: \(event.location)"
+            location.text = "Location: \(event.location!)"
         }
         if let heart = heartButton {
             happyHeart = false;
