@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class AddNewItemViewController : UIViewController {
+class AddNewItemViewController : UIViewController, UITextFieldDelegate, UITextViewDelegate{
     
     @IBOutlet weak var nameOfEventTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -21,18 +21,40 @@ class AddNewItemViewController : UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.nameOfEventTextField.delegate = self;
+        self.locationTextField.delegate = self;
+        self.descriptionTextView.delegate = self;
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
     }
     
     @IBAction func uploadImageButtonPressed(sender: AnyObject) {
         // Go to where we can upload images
     }
+
     
     
     @IBAction func submitEventButtonPressed(sender: AnyObject) {
         self.event = Event()
         // set stuff up about the event
+        self.event.title = nameOfEventTextField.text!
+        self.event.location = locationTextField.text!
+        self.event.start = startTimeDatePicker.description
+        self.event.end = endTimeDatePicker.description
+        self.event.description = descriptionTextView.description
+        // image stuff later
+        // self.event.image = imageView.image
+        
+        // save the event to the database
+        
+        // go back to other view
         
     }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
       //  if (sender != self.doneButton) {

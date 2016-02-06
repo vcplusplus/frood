@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -199,66 +199,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-nK-GQp">
-                                <rect key="frame" x="212" y="46" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bnF-nK-GQp">
+                                <rect key="frame" x="184" y="26" width="116" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name of the Event:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-YW-DjB">
-                                <rect key="frame" x="37" y="49" width="146" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name of the Event:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-YW-DjB">
+                                <rect key="frame" x="30" y="30" width="146" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-En-f9v">
-                                <rect key="frame" x="37" y="102" width="71" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z1z-En-f9v">
+                                <rect key="frame" x="31" y="70.5" width="70.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-pa-jrB">
-                                <rect key="frame" x="31" y="395" width="93" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Description:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7Y-pa-jrB">
+                                <rect key="frame" x="30" y="100" width="92.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter the description of your event here!" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-XE-BL0">
-                                <rect key="frame" x="138" y="389" width="310" height="169"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FBz-XE-BL0">
+                                <rect key="frame" x="130" y="100" width="349.5" height="100"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="Rrr-FK-SOm"/>
+                                </constraints>
+                                <string key="text">Enter the description of your event here! kajsdf;lkajsdflkajsdfl;k asjdfl;kasjdfakls;dfjas;lkd jfkljkljdas;jfl;kasdjflk; sadjfkl;asdjflksadjf adskfjas asdkfj adsf fdslakfjaskldfjsla kdflksadf sadkjfklasdjflksadjfl</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="euo-ZV-bOm">
-                                <rect key="frame" x="20" y="214" width="280" height="136"/>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="30" translatesAutoresizingMaskIntoConstraints="NO" id="euo-ZV-bOm">
+                                <rect key="frame" x="30" y="216" width="350" height="150"/>
                                 <date key="date" timeIntervalSinceReferenceDate="476467234.60961503">
                                     <!--2016-02-06 16:00:34 +0000-->
                                 </date>
                             </datePicker>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bdJ-7J-kTf">
-                                <rect key="frame" x="317" y="214" width="263" height="136"/>
+                                <rect key="frame" x="30" y="403" width="350" height="150"/>
                                 <date key="date" timeIntervalSinceReferenceDate="476467234.60961503">
                                     <!--2016-02-06 16:00:34 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK4-lB-zY6">
-                                <rect key="frame" x="46" y="173" width="85" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Start Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yK4-lB-zY6">
+                                <rect key="frame" x="30" y="182" width="85" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-xG-Y0G">
-                                <rect key="frame" x="405" y="173" width="77" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-Z1-mcr">
-                                <rect key="frame" x="212" y="93" width="97" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5dx-Z1-mcr">
+                                <rect key="frame" x="113" y="62" width="191.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-F9-D7h">
-                                <rect key="frame" x="388" y="38" width="147" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pb-F9-D7h">
+                                <rect key="frame" x="30" y="533" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Upload Image">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -267,9 +265,13 @@
                                     <action selector="uploadImageButtonPressed:" destination="0hW-r9-tpm" eventType="touchUpInside" id="lkO-eH-9ft"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-bh-Fbe">
-                                <rect key="frame" x="388" y="93" width="147" height="43"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9r-bh-Fbe">
+                                <rect key="frame" x="420" y="533" width="150" height="40"/>
                                 <color key="backgroundColor" red="0.95294117649999999" green="0.1019607843" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GE9-8h-8gO"/>
+                                    <constraint firstAttribute="width" constant="150" id="YpA-ye-yTs"/>
+                                </constraints>
                                 <state key="normal" title="Submit Event">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -277,8 +279,28 @@
                                     <action selector="submitEventButtonPressed:" destination="0hW-r9-tpm" eventType="touchUpInside" id="N2s-ee-38X"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QAY-xG-Y0G">
+                                <rect key="frame" x="34" y="374" width="76.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AzQ-BH-cPn" firstAttribute="top" secondItem="C9r-bh-Fbe" secondAttribute="bottom" constant="20" id="0YF-ZS-xFa"/>
+                            <constraint firstItem="FBz-XE-BL0" firstAttribute="leading" secondItem="M7Y-pa-jrB" secondAttribute="trailing" constant="2.5" id="4FS-Zm-2it"/>
+                            <constraint firstItem="Z1z-En-f9v" firstAttribute="top" secondItem="hKg-YW-DjB" secondAttribute="bottom" constant="25" id="83q-Fx-4Um"/>
+                            <constraint firstItem="FBz-XE-BL0" firstAttribute="top" secondItem="5dx-Z1-mcr" secondAttribute="bottom" constant="15" id="91J-O0-8MD"/>
+                            <constraint firstItem="yK4-lB-zY6" firstAttribute="top" secondItem="M7Y-pa-jrB" secondAttribute="bottom" constant="70" id="Hd9-1F-Upb"/>
+                            <constraint firstItem="bnF-nK-GQp" firstAttribute="top" secondItem="3Te-gj-rPp" secondAttribute="bottom" constant="5" id="SjB-Sp-O7n"/>
+                            <constraint firstItem="hKg-YW-DjB" firstAttribute="top" secondItem="3Te-gj-rPp" secondAttribute="bottom" constant="10" id="Upn-l1-LvC"/>
+                            <constraint firstItem="AzQ-BH-cPn" firstAttribute="top" secondItem="8Pb-F9-D7h" secondAttribute="bottom" constant="20" id="Uzn-6s-3o4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FBz-XE-BL0" secondAttribute="trailing" constant="10" id="V2c-ly-DUc"/>
+                            <constraint firstItem="5dx-Z1-mcr" firstAttribute="top" secondItem="bnF-nK-GQp" secondAttribute="bottom" constant="15" id="d9j-6h-ieT"/>
+                            <constraint firstItem="M7Y-pa-jrB" firstAttribute="top" secondItem="5dx-Z1-mcr" secondAttribute="bottom" constant="10" id="dyb-v1-AAe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="C9r-bh-Fbe" secondAttribute="trailing" constant="10" id="oqd-FP-Y2D"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="descriptionTextView" destination="FBz-XE-BL0" id="e3t-VH-2x3"/>
