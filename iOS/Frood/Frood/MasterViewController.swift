@@ -12,22 +12,37 @@ class MasterViewController: UITableViewController {
 
     var detailViewController: DetailViewController? = nil
     var events = [AnyObject]()
+    // also very bad and hacky
+    static var passedEvent:Event!
+    static var isThereAPassedEvent:Bool!
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       //let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
-        //self.navigationItem.rightBarButtonItem = addButton
+       let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        self.navigationItem.rightBarButtonItem = addButton
         if let split = self.splitViewController {
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
     }
 
+
     override func viewWillAppear(animated: Bool) {
         self.clearsSelectionOnViewWillAppear = self.splitViewController!.collapsed
         super.viewWillAppear(animated)
+        if (MasterViewController.isThereAPassedEvent != nil) {
+            events.append(MasterViewController.passedEvent)
+        }
+        // load up everything we have so far
+        // requires API call !!!!
+        //if (MasterViewController.isThereAPassedEvent != nil) {
+        //    events.insert(MasterViewController.passedEvent, atIndex: 0)
+        //    let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //    self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+         //   MasterViewController.isThereAPassedEvent = false
+        //}
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,23 +52,12 @@ class MasterViewController: UITableViewController {
 
     func insertNewObject(sender: AnyObject) {
         // eventually pull up a view that's like hey set up this event !!
-         // performSegueWithIdentifier("addNewItem", sender:self)
-       // events.insert(Event(), atIndex: 0)
-       // let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-      //  self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-
+          performSegueWithIdentifier("addNewItem", sender:self)
+        //events.insert(e, atIndex: 0)
+        //let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+        //self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
     }
     
-    
-    override func unwindForSegue(unwindSegue: UIStoryboardSegue, towardsViewController subsequentVC: UIViewController) {
-        let source = unwindSegue.sourceViewController as! AddNewItemViewController
-        let event:Event = source.event
-        // get vars from the sourceViewController and set them equal to stuff
-        events.insert(event, atIndex: 0)
-        let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-        self.tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-        self.tableView.reloadData()
-    }
     
     // MARK: - Segues
 

@@ -13,11 +13,11 @@
 		EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7D01C65950200018BE6 /* DetailViewController.swift */; };
 		EB42F7D41C65950200018BE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB42F7D21C65950200018BE6 /* Main.storyboard */; };
 		EB42F7D61C65950300018BE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EB42F7D51C65950300018BE6 /* Assets.xcassets */; };
-		EB42F7D91C65950300018BE6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB42F7D71C65950300018BE6 /* LaunchScreen.storyboard */; };
 		EB42F7E41C65950300018BE6 /* FroodTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7E31C65950300018BE6 /* FroodTests.swift */; };
 		EB42F7EF1C65950300018BE6 /* FroodUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7EE1C65950300018BE6 /* FroodUITests.swift */; };
 		EB42F7FF1C6642D900018BE6 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB42F7FE1C6642D900018BE6 /* Event.swift */; };
 		EB4B40331C6654B5007A3DB6 /* AddNewItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */; };
+		EB4B40351C667A61007A3DB6 /* HackySplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB4B40341C667A61007A3DB6 /* HackySplitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,6 @@
 		EB42F7D01C65950200018BE6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EB42F7D31C65950200018BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EB42F7D51C65950300018BE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		EB42F7D81C65950300018BE6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EB42F7DA1C65950300018BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB42F7DF1C65950300018BE6 /* FroodTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FroodTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB42F7E31C65950300018BE6 /* FroodTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FroodTests.swift; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		EB42F7F01C65950300018BE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB42F7FE1C6642D900018BE6 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewItemViewController.swift; sourceTree = "<group>"; };
+		EB4B40341C667A61007A3DB6 /* HackySplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HackySplitViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +131,9 @@
 				EB42F7CE1C65950200018BE6 /* MasterViewController.swift */,
 				EB42F7D01C65950200018BE6 /* DetailViewController.swift */,
 				EB4B40321C6654B5007A3DB6 /* AddNewItemViewController.swift */,
+				EB4B40341C667A61007A3DB6 /* HackySplitViewController.swift */,
 				EB42F7D21C65950200018BE6 /* Main.storyboard */,
 				EB42F7D51C65950300018BE6 /* Assets.xcassets */,
-				EB42F7D71C65950300018BE6 /* LaunchScreen.storyboard */,
 				EB42F7DA1C65950300018BE6 /* Info.plist */,
 				EB42F7FE1C6642D900018BE6 /* Event.swift */,
 			);
@@ -268,7 +268,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EB42F7D91C65950300018BE6 /* LaunchScreen.storyboard in Resources */,
 				EB42F7D61C65950300018BE6 /* Assets.xcassets in Resources */,
 				EB42F7D41C65950200018BE6 /* Main.storyboard in Resources */,
 			);
@@ -347,6 +346,7 @@
 				EB42F7D11C65950200018BE6 /* DetailViewController.swift in Sources */,
 				EB42F7CF1C65950200018BE6 /* MasterViewController.swift in Sources */,
 				EB4B40331C6654B5007A3DB6 /* AddNewItemViewController.swift in Sources */,
+				EB4B40351C667A61007A3DB6 /* HackySplitViewController.swift in Sources */,
 				EB42F7CD1C65950200018BE6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,14 +389,6 @@
 				EB42F7D31C65950200018BE6 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		EB42F7D71C65950300018BE6 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EB42F7D81C65950300018BE6 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
