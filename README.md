@@ -1,4 +1,4 @@
 Frood!
 ------
 
-Frood! is an iOS app for helping people find free food.
+Frood! is an iOS application that helps college students find free food on-campus. 
